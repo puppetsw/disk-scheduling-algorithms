@@ -38,6 +38,8 @@ def SCAN(hp, reqs):
             distance.append(i)
             requests.remove(i)
 
+    distance.append(end)
+
     time += abs(pos-end)
     pos = end
     for i in range(end, start-1, -1):
@@ -79,6 +81,10 @@ def C_SCAN(hp, reqs):
             pos = i
             distance.append(i)
             requests.remove(i)
+
+    distance.append(end)
+    distance.append(start)
+
     time += abs(pos-end)
     pos = end
     # seek to hp from start
